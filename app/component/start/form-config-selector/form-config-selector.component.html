@@ -1,0 +1,30 @@
+<!--
+-->
+  <form novalidate [formGroup]="configSelectionForm" (ngSubmit)="onSubmitConfigSelection(form)">
+
+  <dynamic-form-group
+    [config]="configSelectionConfig"
+    [group]="configSelectionForm"
+    (onGroupValueChanged)="updateFormConfig($event)">
+  </dynamic-form-group>
+
+  <button type="submit" class="btn btn-prinmary">Submit</button>
+
+</form>
+
+<div class="row">
+
+  <div class="col-sm-12">
+
+    <form novalidate [formGroup]="dynamicForm" (ngSubmit)="onSubmit(form)">
+      <dynamic-form-group
+        [group]="dynamicForm"
+        [config]="formConfig"
+        (onGroupValueChanged)="onDynamicFormChange($event)">
+      </dynamic-form-group>
+    </form>
+
+  </div>
+
+
+</div>
